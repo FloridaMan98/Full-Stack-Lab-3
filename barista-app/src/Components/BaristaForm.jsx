@@ -77,6 +77,21 @@ const BaristaForm = () => {
         else {
             setCheckedBlended("correct");
         }
+
+        if (!ingredients['temperature'].includes(inputs['temperature'])) {
+            alert("For temperature, that isn't even an option!")
+          }
+          if (!ingredients['milk'].includes(inputs['milk'])) {
+            alert("For milk, that isn't even an option!")
+        }
+        
+        if (!ingredients['syrup'].includes(inputs['syrup'])) {
+            alert("For syrup, that isn't even an option!")
+        }
+        
+        if (!ingredients['blended'].includes(inputs['blended'])) {
+            alert("For blended, that isn't even an option!")
+        }
     };
   
   return (
@@ -92,7 +107,8 @@ const BaristaForm = () => {
                   🔄
               </button>
           </div>
-          <div className="mini-container">
+          <div className="container">
+            <div className="mini-container">
               <h3>Temperature</h3>
               <div className="answer-space" id={correct_temp}>
                   {inputs["temperature"]}
@@ -156,7 +172,8 @@ const BaristaForm = () => {
                   choices={ingredients["blended"]}
                   currentVal={inputs["blended"]}
               />
-          </div>
+          </div></div>
+          
 
           <form className="container">
             
